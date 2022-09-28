@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:shopping/screens/Homepage.dart';
@@ -15,12 +16,23 @@ class _LoginscreenState extends State<Loginscreen> {
 
   void validate() {
     if (formkey.currentState!.validate()) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Homepage()));
+     FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+              email: _email.text, password: _password.text)
+          .then((value) => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Homepage(),
+                ),
+              ))
+          .onError((error, stackTrace) => print("Error ${error.toString()}"));
     } else {
       print("Error"); //validate
     }
   }
+
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
   // void validatepas(){
   //   if(formkey){
   //     print("validated");
@@ -57,6 +69,7 @@ class _LoginscreenState extends State<Loginscreen> {
             ),
             TextFieldContainer(
               child: TextFormField(
+                controller: _email,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return "Please Enter Email";
@@ -81,6 +94,7 @@ class _LoginscreenState extends State<Loginscreen> {
             ),
             TextFieldContainer(
               child: TextFormField(
+                controller: _password,
                 obscureText: true,
                 decoration: InputDecoration(
                     // suffixIcon:

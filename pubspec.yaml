@@ -39,6 +39,8 @@ dependencies:
   clippy_flutter: ^2.0.0-nullsafety.1
   flutter_rating_bar: ^4.0.1
   form_field_validator: ^1.1.0
+  firebase_core: ^1.23.0
+  firebase_auth: ^3.10.0
 
 dev_dependencies:
   flutter_test:

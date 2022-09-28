@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping/screens/Loginscreen.dart';
 
@@ -13,10 +14,16 @@ class _RegisterscreenState extends State<Registerscreen> {
 
   void validate() {
     if (formkey.currentState!.validate()) {
-      print("ok");
-      // Loginscreen();
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const Loginscreen()));
+      FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+              email: _email.text, password: _password.text)
+          .then((value) => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Loginscreen(),
+                ),
+              ))
+          .onError((error, stackTrace) => print("Error ${error.toString()}"));
     } else {
       print("Error");
     }
