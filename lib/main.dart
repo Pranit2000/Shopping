@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shopping/screens/Cartpage.dart';
 import 'package:shopping/screens/Homepage.dart';
 import 'package:shopping/screens/ItemPage.dart';
+import 'package:shopping/screens/Loginscreen.dart';
+import 'package:shopping/screens/Registerpage.dart';
 import 'package:shopping/screens/splashscreen.dart';
 
 void main() {
@@ -15,16 +17,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(primaryColor: Color(0xFF4C53A5),scaffoldBackgroundColor: Colors.white),
+        theme: ThemeData(
+            primaryColor: Color(0xFF4C53A5),
+            scaffoldBackgroundColor: Colors.white),
         routes: {
           "/": (context) => Splashscreen(),
-          "Homepage":(context)=>Homepage(),
+          "Loginpage": (context) => Loginscreen(),
+          "Registerpage": (context) => Registerscreen(),
+          "Homepage": (context) => Homepage(),
           "Cartpage": (context) => Cartpage(),
           "itemPage": (context) => ItemPage(),
-        }
-    );
+        });
   }
 }
-

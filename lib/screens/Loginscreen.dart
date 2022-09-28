@@ -58,15 +58,15 @@ class _LoginscreenState extends State<Loginscreen> {
             TextFieldContainer(
               child: TextFormField(
                 validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Please Enter Email";
-                      }
-                      if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
-                          .hasMatch(value)) {
-                        return "Please Enter valid email";
-                      }
-                      return null;
-                    },
+                  if (value!.isEmpty) {
+                    return "Please Enter Email";
+                  }
+                  if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+                      .hasMatch(value)) {
+                    return "Please Enter valid email";
+                  }
+                  return null;
+                },
                 decoration: InputDecoration(
                     icon: Icon(
                       Icons.person,
@@ -91,15 +91,15 @@ class _LoginscreenState extends State<Loginscreen> {
                     ),
                     hintText: "Password",
                     border: InputBorder.none),
-                 validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Please Enter Password";
-                      }
-                      if (value.length < 6) {
-                        return "Password Must be 6 characters";
-                      }
-                      return null;
-                    },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "Please Enter Password";
+                  }
+                  if (value.length < 6) {
+                    return "Password Must be 6 characters";
+                  }
+                  return null;
+                },
               ),
             ),
             SizedBox(
@@ -113,7 +113,7 @@ class _LoginscreenState extends State<Loginscreen> {
                   padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
                   color: Color(0xFF4C53A5),
                   onPressed: () {
-                  validate();
+                    validate();
                   },
                   child: Text(
                     "Login",

@@ -24,7 +24,7 @@ class _SplashscreenState extends State<Splashscreen> {
                 fontWeight: FontWeight.bold),
           ),
           Padding(
-            padding: const EdgeInsets.only(right:5,left: 5),
+            padding: const EdgeInsets.only(right: 5, left: 5),
             child: Container(
               child: Image.asset(
                 "images/DameMobile.png",

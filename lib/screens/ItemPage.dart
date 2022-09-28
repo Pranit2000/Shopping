@@ -5,7 +5,6 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:shopping/widgets/ItemAppBar.dart';
 import 'package:shopping/widgets/ItemBottomNavBar.dart';
 
-
 class ItemPage extends StatefulWidget {
   const ItemPage({Key? key}) : super(key: key);
 
@@ -72,8 +71,8 @@ class _ItemPageState extends State<ItemPage> {
                             itemCount: 5,
                             itemSize: 20,
                             itemPadding: EdgeInsets.symmetric(horizontal: 4),
-                            itemBuilder: (context, _) => Icon(Icons.favorite,
-                                color: Color(0xFF4C53A5)),
+                            itemBuilder: (context, _) =>
+                                Icon(Icons.favorite, color: Color(0xFF4C53A5)),
                             onRatingUpdate: (index) {},
                           ),
                           Row(

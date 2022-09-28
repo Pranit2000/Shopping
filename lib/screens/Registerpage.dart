@@ -12,18 +12,19 @@ class _RegisterscreenState extends State<Registerscreen> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
   void validate() {
-      if (formkey.currentState!.validate()) {
-        print("ok");
-        // Loginscreen();
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const Loginscreen()));
-      } else {
-        print("Error");
-      }
+    if (formkey.currentState!.validate()) {
+      print("ok");
+      // Loginscreen();
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const Loginscreen()));
+    } else {
+      print("Error");
     }
-    TextEditingController _email = TextEditingController();
-    TextEditingController _password = TextEditingController();
-    TextEditingController _confirmpassword = TextEditingController();
+  }
+
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
+  TextEditingController _confirmpassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -62,15 +63,15 @@ class _RegisterscreenState extends State<Registerscreen> {
                     hintText: "Your Email",
                     border: InputBorder.none),
                 validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Please Enter Email";
-                      }
-                      if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
-                          .hasMatch(value)) {
-                        return "Please Enter valid email";
-                      }
-                      return null;
-                    },
+                  if (value!.isEmpty) {
+                    return "Please Enter Email";
+                  }
+                  if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+                      .hasMatch(value)) {
+                    return "Please Enter valid email";
+                  }
+                  return null;
+                },
               ),
             ),
             SizedBox(
@@ -89,15 +90,15 @@ class _RegisterscreenState extends State<Registerscreen> {
                     ),
                     hintText: "Password",
                     border: InputBorder.none),
-               validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Please Enter Password";
-                      }
-                      if (value.length < 6) {
-                        return "Password Must be 6 characters";
-                      }
-                      return null;
-                    },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "Please Enter Password";
+                  }
+                  if (value.length < 6) {
+                    return "Password Must be 6 characters";
+                  }
+                  return null;
+                },
               ),
             ),
             SizedBox(
@@ -116,16 +117,16 @@ class _RegisterscreenState extends State<Registerscreen> {
                     ),
                     hintText: "Confirm Password",
                     border: InputBorder.none),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Please Enter re-Password";
-                      }
-                      print(_password.text);
-                      if (_password.text != _confirmpassword.text) {
-                        return "Password do no match";
-                      }
-                      return null;
-                    },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "Please Enter re-Password";
+                  }
+                  print(_password.text);
+                  if (_password.text != _confirmpassword.text) {
+                    return "Password do no match";
+                  }
+                  return null;
+                },
               ),
             ),
             SizedBox(
