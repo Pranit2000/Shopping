@@ -1,5 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping/screens/additem.dart';
 
 class Homeappbar extends StatefulWidget {
   const Homeappbar({Key? key}) : super(key: key);
@@ -31,6 +32,24 @@ class _HomeappbarState extends State<Homeappbar> {
           ),
         ),
         Spacer(),
+        Padding(
+          padding: const EdgeInsets.only(right: 10.0),
+          child: InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Additem(),
+                ),
+              );
+            },
+            child: Icon(
+              Icons.add,
+              size: 40,
+              color: Color(0xFF4C53A5),
+            ),
+          ),
+        ),
         Badge(
           badgeColor: Colors.red,
           padding: EdgeInsets.all(7),
@@ -44,7 +63,7 @@ class _HomeappbarState extends State<Homeappbar> {
                 size: 32,
                 color: Color(0xFF4C53A5),
               )),
-        )
+        ),
       ]),
     );
   }

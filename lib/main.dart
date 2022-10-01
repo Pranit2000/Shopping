@@ -5,6 +5,7 @@ import 'package:shopping/screens/Homepage.dart';
 import 'package:shopping/screens/ItemPage.dart';
 import 'package:shopping/screens/Loginscreen.dart';
 import 'package:shopping/screens/Registerpage.dart';
+import 'package:shopping/screens/additem.dart';
 import 'package:shopping/screens/splashscreen.dart';
 
 void main() async {
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
           "Loginpage": (context) => Loginscreen(),
           "Registerpage": (context) => Registerscreen(),
           "Homepage": (context) => Homepage(),
+          "additem":((context) => Additem()),
           "Cartpage": (context) => Cartpage(),
           "itemPage": (context) => ItemPage(),
         });
